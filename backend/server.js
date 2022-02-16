@@ -7,6 +7,7 @@ const connectDB = require('./config/db');
 connectDB();
 
 const goalRoute = require('./routes/goalRoute');
+const userRoute = require('./routes/userRoute');
 
 const port = process.env.PORT || 5000;
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api/goals', goalRoute);
+app.use('/api/users', userRoute);
 
 app.use(errorHandler);
 
