@@ -75,8 +75,7 @@ const loginUser = asyncHandler(async (req, res) => {
 // GET /api/users/me
 // Private
 const getMe = asyncHandler(async (req, res) => {
-  const { _id, name, email } = await User.findById(req.user.id);
-  res.json({ _id, name, email });
+  res.json(req.user);
 });
 
 module.exports = { registerUser, loginUser, getMe };
